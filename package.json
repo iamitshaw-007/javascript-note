@@ -1,0 +1,15 @@
+{
+  "name": "nodejssetup",
+  "version": "1.0.0",
+  "description": "Node Js Project Set Up",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodeJs",
+    "backend"
+  ],
+  "author": "Amit Shaw",
+  "license": "ISC"
+}
