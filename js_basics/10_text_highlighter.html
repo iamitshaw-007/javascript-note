@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Highlighter</title>
+  </head>
+  <body>
+    <label for="searchText"> Search Text: </label>
+    <input id="searchText" class="searchText" type="search" />
+    <p class="textToSearchOn">
+      Artificial intelligence (AI) has rapidly transformed various sectors,
+      revolutionizing the way we live and work. From healthcare to finance,
+      AI-driven technologies are streamlining processes, enhancing
+      decision-making, and providing personalized experiences. In healthcare, AI
+      algorithms assist in early diagnosis and treatment planning, improving
+      patient outcomes. In finance, AI models predict market trends and manage
+      risks more effectively. Moreover, AI-powered chatbots and virtual
+      assistants are enhancing customer service across industries. Despite its
+      numerous benefits, AI also raises ethical concerns, such as data privacy
+      and job displacement. As AI continues to evolve, it is crucial to address
+      these challenges while harnessing its potential for societal good.
+    </p>
+    <script>
+      const searchInputElement = document.querySelector('.searchText');
+      const textToSearchOnElement = document.querySelector('.textToSearchOn');
+      const originalText = textToSearchOnElement.innerHTML;
+      searchInputElement.addEventListener('input', function (event) {
+        const searchText = event.target.value;
+        /* The parentheses (${searchText}) create a capturing group, 
+        which allows the matched text to be referenced as $1 in the 
+        replace function */
+        const pattern = new RegExp(`(${searchText})`, 'gi');
+        textToSearchOnElement.innerHTML = originalText.replace(
+          pattern,
+          `<mark>$1</mark>`
+        );
+      });
+    </script>
+  </body>
+</html>
