@@ -56,3 +56,48 @@ console.log('Array.slice: ', numbers.slice(4, 8));
 /* removes elements from an array and, if necessary, inserts 
 new elements in their place, returning the deleted elements. */
 console.log('Array.splice: ', numbers.splice(4, 8));
+
+/*  determine if an array contains a certain element */
+console.log('Array.includes: ', numbers.includes(5));
+
+/* reverse the order of the elements in an array */
+console.log('Array.reverse', numbers.reverse());
+
+/* returns the value of the first element in the array
+ where predicate is true, and undefined otherwise. */
+console.log(
+  'Array.find',
+  numbers.find((item, index) => {
+    return item === 20;
+  })
+);
+
+/* returns the index of the first element in the 
+array where predicate is true, and -1 otherwise. */
+console.log(
+  'Array.findIndex',
+  numbers.findIndex((item, index) => {
+    return item === 20;
+  })
+);
+
+/* returns the index of the first occurrence of 
+a value in an array, or -1 if it is not present. */
+console.log('Array.indexOf', numbers.indexOf(20));
+
+/* returns index of last occurrence of a specified
+ value in an array, or -1 if it is not present. */
+console.log('Array.lastIndexOf', numbers.lastIndexOf(19));
+
+/* changes all array elements from start to end index
+ to a static value and returns the modified array */
+console.log(numbers.fill(0, 0, numbers.length));
+
+numbers[10] = 0;
+console.log(numbers); // [ 0, 0, 0, 0, <6 empty items>, 0 ]
+
+/* performs the specified action for each element in an array */
+numbers.forEach((number, index) => {
+  numbers[index] = index;
+});
+console.log('Array.forEach', numbers);
